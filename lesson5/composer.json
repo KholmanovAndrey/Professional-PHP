@@ -1,0 +1,14 @@
+{
+    "autoload": {
+        "psr-0": {
+            "App\\controllers\\": "controllers/",
+            "App\\models\\": "models/",
+            "App\\services\\": "services/",
+            "App\\services\\renders\\": "services/renders/",
+            "App\\traits\\": "traits/"
+        }
+    },
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
