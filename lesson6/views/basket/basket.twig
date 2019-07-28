@@ -1,0 +1,31 @@
+<?php
+/**
+ * @var array $basket
+ * @var \App\models\Basket $basket
+ */
+?>
+<div class="container">
+    <div class="basket">
+        <h1 class="basket__title">Корзина</h1>
+        <div class="basket__box">
+            <div class="item">
+                <div class="item__id">ID</div>
+                <div class="item__good">Товар</div>
+                <div class="item__quantity">Кол-во</div>
+                <div class="item__price">Цена</div>
+                <div class="item__action"></div>
+            </div>
+            {% for item in basket %}
+                <div class="item">
+                    <div class="item__id">{{ item.id }}</div>
+                    <div class="item__good">{{ item.id_good }}</div>
+                    <div class="item__quantity">{{ item.quantity }}</div>
+                    <div class="item__price">{{ item.price }}</div>
+                    <div class="item__action">
+                        <a href="/basket/delete?id={{ item.id }}" class="item__link btn btn-dark">Удалить</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
