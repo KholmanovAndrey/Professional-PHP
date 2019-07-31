@@ -1,0 +1,22 @@
+{% extends "layouts/main.twig" %}
+
+{% block content %}
+<div class="container">
+    <div class="goods">
+        <h1 class="goods__title">Товары</h1>
+        <div class="goods__box">
+            {% for good in goods %}
+                <div class="good">
+                    <div class="good__name">{{ good.name }}</div>
+                    <div class="good__price">{{ good.price }}</div>
+                    <div class="good__info">{{ good.info }}</div>
+                    <div class="good__action">
+                        <a href="/basket/add?id={{ good.id }}" class="good__link btn btn-dark">Купить</a>
+                        <a href="/good/good?id={{ good.id }}" class="good__link btn btn-dark">Подробнее</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
