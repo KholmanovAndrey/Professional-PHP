@@ -1,0 +1,14 @@
+{% extends "layouts/main.twig" %}
+
+{% block content %}
+<div class="container">
+    <h1>Регистрация пользователя</h1>
+    <form action="?a=signup" method="post" class="form">
+        <input type="text" name="login" placeholder="Введите логин" value="{{ post.login }}" class="form__input">
+        <input type="text" name="name" placeholder="Введите имя" value="{{ post.name }}" class="form__input">
+        <input type="password" name="password" placeholder="Введите пароль" class="form__input">
+        <input type="password" name="podpassword" placeholder="Введите еще раз пароль" class="form__input">
+        <button type="submit" class="form__button btn btn-dark">Сохранить</button>
+    </form>
+</div>
+{% endblock %}

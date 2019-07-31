@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="topbar">
+                <ul class="menu">
+                    {% if currentUser %}
+                        {{ currentUser.login }}
+                        <li class="menu__list"><a class="menu__link" href="/user/logout">Выйти</a></li>
+                    {% else %}
+                        <li class="menu__list"><a class="menu__link" href="/user/login">Войти</a></li>
+                        <li class="menu__list"><a class="menu__link" href="/user/signup">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <nav class="nav">
+                <ul class="menu">
+                    <li class="menu__list"><a class="menu__link" href="/user/users">Пользователи</a></li>
+                    <li class="menu__list"><a class="menu__link" href="/good/goods">Товары</a></li>
+                    <li class="menu__list"><a class="menu__link" href="/basket">Корзина</a></li>
+                    {% if currentUser %}
+                        <li class="menu__list"><a class="menu__link" href="/order/history">История заказов</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="content">{% block content %}{% endblock %}</div>
+</body>
+</html>
