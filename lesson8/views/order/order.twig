@@ -1,0 +1,16 @@
+{% extends "layouts/main.twig" %}
+
+{% block content %}
+    <div class="container">
+        <div class="basket">
+            <h1 class="basket__title">Оформить заказ</h1>
+            <form action="/order" method="post" class="form">
+                <input type="text" name="id_user" class="form__input" value="{{ currentUser.id }}">
+                <input type="text" name="fio" placeholder="Введите ФИО" value="{{ currentUser.name }}" class="form__input">
+                <input type="text" name="contact" placeholder="Введите телефон" value="{{ currentUser.contact }}" class="form__input">
+                <input type="text" name="address" placeholder="Введите адрес" value="{{ currentUser.address }}" class="form__input">
+                <button type="submit" class="form__button btn btn-dark">Оформить заказ</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

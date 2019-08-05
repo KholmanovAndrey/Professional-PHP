@@ -1,0 +1,30 @@
+{% extends "layouts/main.twig" %}
+
+{% block content %}
+<div class="container">
+    <div class="basket">
+        <h1 class="basket__title">Корзина</h1>
+        <div class="basket__box">
+            <div class="item">
+                <div class="item__id">ID</div>
+                <div class="item__good">Товар</div>
+                <div class="item__quantity">Кол-во</div>
+                <div class="item__price">Цена</div>
+                <div class="item__action"></div>
+            </div>
+            {% for key, item in basket %}
+                <div class="item">
+                    <div class="item__id">{{ key }}</div>
+                    <div class="item__good">{{ item.name }}</div>
+                    <div class="item__quantity">{{ item.quantity }}</div>
+                    <div class="item__price">{{ item.price }}</div>
+                    <div class="item__action">
+                        <a href="/basket/delete?id={{ key }}" class="item__link btn btn-dark">Удалить</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="/order" class="item__link btn btn-dark">Оформить заказ</a>
+    </div>
+</div>
+{% endblock %}
